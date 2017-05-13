@@ -98,7 +98,7 @@ emitter.addBehaviour(new Proton.Alpha(1, 0));
 
 With `ProtonLoader`, those properties are just passed as parameters in the `particleProps` object, and `ProtonLoader` will call those functions for you:
 
-```javascript```
+```javascript
 const myParticles = new ProtonLoader({
   container: scene,
   renderType: 'MeshRender',
