@@ -1,0 +1,28 @@
+{
+  "name": "proton-loader",
+  "version": "1.0.0",
+  "description": "loader class for creatin three.proton particle systems",
+  "main": "ProtonLoader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nlra/ProtonLoader.git"
+  },
+  "keywords": [
+    "proton",
+    "three.js",
+    "particles"
+  ],
+  "author": "nlra <nlra.alrn@gmail.com> (https://github.com/nlra)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nlra/ProtonLoader/issues"
+  },
+  "homepage": "https://github.com/nlra/ProtonLoader#readme",
+  "dependencies": {
+    "three": "^0.85.2",
+    "three.proton": "^1.0.1"
+  }
+}
