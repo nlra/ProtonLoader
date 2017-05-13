@@ -1,7 +1,3 @@
-import THREE from './THREE';
-
-const Proton = require('three.proton');
-
 function setupEmitter(pr, body) {
     const emitter = new Proton.Emitter();
     emitter.rate = new Proton.Rate(
@@ -97,8 +93,9 @@ function setupBody(shape) {
     return body;
 }
 
-class ProtonLoader {
-    constructor(options) {
+class ProtonCreator {
+    constructor(Proton, options) {
+        this.destroyed = false;
         this.container = options.container;
         this.body = setupBody(options.body);
         this.proton = new Proton();
@@ -112,6 +109,11 @@ class ProtonLoader {
     update() {
         this.proton.update();
     }
+
+    destroy() {
+        this.proton.destroy();
+        this.destroyed = true;
+    }
 }
 
-export default ProtonLoader;
+export default ProtonCreator;
