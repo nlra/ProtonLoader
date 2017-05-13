@@ -2,9 +2,10 @@
   "name": "three-proton-loader",
   "version": "1.0.0",
   "description": "loader class for creatin three.proton particle systems",
-  "main": "build/ProtonLoader.js",
+  "main": "build/ProtonLoader.module.js",
+  "module": "src/ProtonLoader.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack && webpack --env.umd && echo \"\nvar ProtonLoader = ProtonLoader.ProtonLoader\" >> ./build/ProtonLoader.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

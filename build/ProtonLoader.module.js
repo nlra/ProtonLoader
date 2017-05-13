@@ -1,5 +1,14 @@
-var ProtonLoader =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["ProtonLoader.module"] = factory();
+	else
+		root["ProtonLoader.module"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -257,5 +266,5 @@ var ProtonLoader = exports.ProtonLoader = function () {
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=ProtonLoader.js.map
-var ProtonLoader = ProtonLoader.ProtonLoader
+});
+//# sourceMappingURL=ProtonLoader.module.js.map
