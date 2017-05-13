@@ -1,10 +1,19 @@
 # ProtonLoader
 ProtonLoader is a class to make [three.proton](https://github.com/a-jie/three.proton) easier to use. It provides a very easy API to create your particle system by instantiating a single class, with object based parameters
 
+## Demo
+
+* [Spheres](https://nlra.github.io/ProtonLoader/examples/spheres.html)
+* [Boxes](https://nlra.github.io/ProtonLoader/examples/boxes.html)
+* [Mesh](https://nlra.github.io/ProtonLoader/examples/mesh.html)
+* [Sprites](https://nlra.github.io/ProtonLoader/examples/sprites.html)
+
 ## Usage
 
 ```javascript
-const particles = new ProtonLoader({
+
+const protonLoader = new ProtonLoader(Proton);
+protonLoader.createParticles({
     container: scene, // Your three.js scene
     renderType: 'MeshRender',
     body: {
@@ -37,10 +46,24 @@ This will create a new `Proton` instance, using the given parameters to setup th
 In order for your particles to be updated every frame, you need to call the `update` function.
 
 ```javascript
+var protonLoader = new ProtonLoader(Proton);
+// create particles or something
 function update() {
-  myParticles.update();
+  protonLoader.update();
   window.requestAnimationFrame(update);
 }
+```
+
+## Destroy function
+
+When you are done using a particle system, you should `destroy` it
+
+```javascript
+var protonLoader = new ProtonLoader(Proton);
+var myParticles = protonLoader.createParticles(myOptions);
+setTimeout(function () {
+    myParticles.destroy();
+}, 5000); // Particles will be destroyed after 5 seconds
 ```
 
 ## Options
