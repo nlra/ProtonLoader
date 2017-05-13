@@ -17,7 +17,11 @@ function setupEmitter(pr, body) {
         }
     }
     if (pr.life) {
-        emitter.addInitialize(new Proton.Life(pr.life[0], pr.life[1]));
+        if (typeof pr.life === 'object') {
+            emitter.addInitialize(new Proton.Life(pr.life[0], pr.life[1]));
+        } else {
+            emitter.addInitialize(new Proton.Life(pr.life));
+        }
     }
     if (typeof pr.spawn === 'number') {
         emitter.addInitialize(new Proton.Position(new Proton.BoxZone(pr.spawn)));
