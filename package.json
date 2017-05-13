@@ -2,8 +2,9 @@
   "name": "proton-loader",
   "version": "1.0.0",
   "description": "loader class for creatin three.proton particle systems",
-  "main": "src/ProtonLoader.js",
+  "main": "build/ProtonLoader.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +22,11 @@
     "url": "https://github.com/nlra/ProtonLoader/issues"
   },
   "homepage": "https://github.com/nlra/ProtonLoader#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "webpack": "^2.5.1"
+  }
 }
