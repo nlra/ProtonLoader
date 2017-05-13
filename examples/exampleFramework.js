@@ -21,32 +21,6 @@ window.onload = function () {
 
     scene = new THREE.Scene();
 
-    particles = new ProtonLoader.ProtonLoader(Proton);
-    particles.createParticles({
-        container: scene,
-        renderType: 'MeshRender',
-        body: {
-            type: 'sphere',
-            radius: 1,
-            segments: 8,
-        },
-        particleProps: {
-            rate: [4, 16],
-            position: 5,
-            mass: 1,
-            radius: [6, 12],
-            life: 5,
-            alpha: [1, 0],
-            scale: [0.1, 1.3],
-            colors: [0xFF0000, 0x00FF00],
-            velocity: {
-                speed: 5,
-                direction: [0, 1, 0],
-                variance: 180,
-            },
-        },
-    });
-
     renderer = new THREE.WebGLRenderer();
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);

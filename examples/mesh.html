@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proton Example</title>
+    <script type="text/javascript" src="../build/ProtonLoader.js"></script>
+    <script type="text/javascript" src="./three.min.js"></script>
+    <script type="text/javascript" src="./three.proton.min.js"></script>
+    <script type="text/javascript" src="./OrbitControls.js"></script>
+    <script type="text/javascript" src="./exampleFramework.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<script>
+    var deg2rad = (Math.PI / 180);
+    function example() {
+        var loader = new THREE.TextureLoader()
+        var directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        scene.add(directionalLight);
+        var light = new THREE.AmbientLight(0x404040, 0.2);
+        scene.add(light);
+        
+        var geometry = new THREE.BoxGeometry(1, 1, 1);
+        var material = new THREE.MeshStandardMaterial({
+            roughness: 0.1,
+            metalness: 0.2,
+            bumpScale: 0.5,
+            color: 0xFFFFFF,
+            map: loader.load('images/brick_diffuse.jpg'),
+            bumpMap: loader.load('images/brick_bump.jpg'),
+            roughnessMap: loader.load('images/brick_roughness.jpg')
+        });
+
+        var box = new THREE.Mesh(geometry, material);
+
+        var planeGeometry = new THREE.PlaneGeometry(20, 20);
+        var leftWall = new THREE.Mesh(planeGeometry, material);
+        leftWall.position.z = -10;
+        var wall = new THREE.Mesh(planeGeometry, material);
+        wall.position.x = 10;
+        wall.position.z = 0;
+        wall.rotation.y = -90 * deg2rad;
+        var floor = new THREE.Mesh(planeGeometry, material);
+        floor.rotation.x = -90 * deg2rad;
+        floor.position.y = -10;
+        scene.add(floor);
+        scene.add(leftWall);
+        scene.add(wall);
+        camera.position.z = 5;
+        camera.position.y = 5;
+        camera.position.x = -5;
+        particles = new ProtonLoader.ProtonLoader(Proton);
+        particles.createParticles({
+            container: scene,
+            renderType: 'MeshRender',
+            body: {
+                type: 'mesh',
+                mesh: box
+            },
+            particleProps: {
+                rate: [15, 30],
+                spawn: 3,
+                mass: 1,
+                life: 1.5,
+                scale: [1.0, 0.1],
+                velocity: {
+                    speed: 3,
+                    direction: [0, 1, 0],
+                    variance: 180,
+                },
+            },
+        });
+    }
+</script>
+</body>
+</html>
