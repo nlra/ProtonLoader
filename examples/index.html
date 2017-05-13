@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proton Example</title>
+    <script type="text/javascript" src="../build/ProtonLoader.js"></script>
+    <script type="text/javascript" src="./three.min.js"></script>
+    <script type="text/javascript" src="./three.proton.min.js"></script>
+    <script type="text/javascript" src="./OrbitControls.js"></script>
+    <script type="text/javascript" src="./exampleFramework.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<script>
+    function example() {
+        particles = new ProtonLoader.ProtonLoader(Proton);
+        particles.createParticles({
+            container: scene,
+            renderType: 'MeshRender',
+            body: {
+                type: 'sphere',
+                radius: 1,
+                segments: 8,
+            },
+            particleProps: {
+                rate: [4, 16],
+                position: 5,
+                mass: 1,
+                radius: [6, 12],
+                life: 5,
+                alpha: [1, 0],
+                scale: [0.1, 1.3],
+                colors: [0xFF0000, 0x00FF00],
+                velocity: {
+                    speed: 5,
+                    direction: [0, 1, 0],
+                    variance: 180,
+                },
+            },
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,8 +1,13 @@
+const libraryName = 'ProtonLoader';
+
 module.exports = {
-    entry: './src/ProtonLoader.js',
+    entry: __dirname + '/src/ProtonLoader.js',
+    devtool: 'source-map',
     output: {
-        path: __dirname + '/build/',
-        filename: 'ProtonLoader.js'
+        path: __dirname + '/build',
+        filename: libraryName + '.js',
+        library: libraryName,
+        libraryTarget: 'umd'
     },
     module: {
         rules: [{

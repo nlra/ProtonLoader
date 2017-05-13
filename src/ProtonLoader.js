@@ -1,6 +1,6 @@
 import ProtonCreator from './ProtonCreator';
 
-class ProtonLoader {
+export class ProtonLoader {
     constructor(Proton) {
         this.Proton = Proton;
         this.particles = [];
@@ -22,5 +22,3 @@ class ProtonLoader {
         }
     }
 }
-
-export default ProtonLoader;

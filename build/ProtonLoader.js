@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["ProtonLoader"] = factory();
+	else
+		root["ProtonLoader"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -207,6 +217,7 @@ exports.default = ProtonCreator;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.ProtonLoader = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -218,7 +229,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ProtonLoader = function () {
+var ProtonLoader = exports.ProtonLoader = function () {
     function ProtonLoader(Proton) {
         _classCallCheck(this, ProtonLoader);
 
@@ -249,7 +260,7 @@ var ProtonLoader = function () {
     return ProtonLoader;
 }();
 
-exports.default = ProtonLoader;
-
 /***/ })
 /******/ ]);
+});
+//# sourceMappingURL=ProtonLoader.js.map
