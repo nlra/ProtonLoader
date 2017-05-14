@@ -10,6 +10,8 @@ ProtonLoader is a class to make [three.proton](https://github.com/a-jie/three.pr
 
 ## Usage
 
+Note that you need to pass the `Proton` object to the constructor of `ProtonLoader` yourself.
+
 ```javascript
 
 const protonLoader = new ProtonLoader(Proton);
