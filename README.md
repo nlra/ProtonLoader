@@ -1,6 +1,8 @@
 # ProtonLoader
 ProtonLoader is a class to make [three.proton](https://github.com/a-jie/three.proton) easier to use. It provides a very easy API to create your particle system by instantiating a single class, with object based parameters
 
+[Available on npm](https://www.npmjs.com/package/three-proton-loader)
+
 ## Demo
 
 * [Spheres](https://nlra.github.io/ProtonLoader/examples/spheres.html)
