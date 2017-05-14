@@ -1,6 +1,6 @@
 {
   "name": "three-proton-loader",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "loader class for creatin three.proton particle systems",
   "main": "build/ProtonLoader.module.js",
   "module": "src/ProtonLoader.js",
